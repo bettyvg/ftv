@@ -1,0 +1,13 @@
+<DockLayout stretchLastChild="false">
+
+<Label text="Titulo" dock="top" class="h1 text-center" ></Label>
+<StackLayout dock="top" class="nt-form">
+    <TextField  keyboardType="email" autocapitalizationType="none" [(ngModel)]="email" class="nt-input" hint="Email"></TextField>
+    <TextField   secure="true" [(ngModel)]="password"  class="nt-input" hint="Password"></TextField>
+
+</StackLayout>
+
+<Button (tap)="login()" dock="bottom" text="Login" class="btn btn-primary -active"></Button> 
+
+
+</DockLayout>
