@@ -3,10 +3,11 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "", redirectTo: "/dialog", pathMatch: "full" },
     { path: "login", loadChildren: () => import("~/app/login/login.module").then((m) => m.LoginModule) },
     { path: "account", loadChildren: () => import("~/app/account/account.module").then((m) => m.AccountModule) },
     { path: "register", loadChildren: () => import("~/app/register/register.module").then((m) => m.RegisterModule)},
+    { path: "dialog", loadChildren: () => import("~/app/dialog/dialog.module").then((m) => m.DialogModule)},
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     { path: "browse", loadChildren: () => import("~/app/browse/browse.module").then((m) => m.BrowseModule) },
     { path: "search", loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule) },

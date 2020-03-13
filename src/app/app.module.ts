@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 
 
 
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -18,6 +19,7 @@ import { AppComponent } from "./app.component";
     ],
     declarations: [
         AppComponent,
+    
         
         
     ],

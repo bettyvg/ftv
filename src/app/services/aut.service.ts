@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { user } from '../classes/User';
 import {request} from "tns-core-modules/http";
 import { HttpResponse } from '@angular/common/http';
+import { FormGroupDirective } from '@angular/forms';
 
 
 @Injectable({
@@ -14,6 +15,7 @@ export class AutService {
 bizURL= "http://auth.bizbox.mx/api/";
 loginURL = "auth/login";
 registerURL = "auth/register";
+forgotURL = "auth/recover-password";
 
 
   constructor() 
@@ -95,5 +97,36 @@ login(email:string, password:string): Promise<string>
         reject(error);
       });
     });
+  
+  }
+    forgot(email:string): Promise<string>
+      {
+          return new Promise<string>((resolve, reject)=>
+          {
+            request({
+            url: this.bizURL + this.forgotURL,
+            headers: {"Content-Type": "application/json"},
+            method: "POST",
+            content: JSON.stringify({
+              email
+            })
+            }).then((response)=>
+            {
+              const result = response.content.toJSON();
+
+              if(result.msg){
+                resolve(result.msg);
+              }
+              else
+              {
+                reject(result.error);
+              }
+
+            }).catch((error)=>
+            {
+              reject(error);
+            });
+    });
+    
   }
 }
