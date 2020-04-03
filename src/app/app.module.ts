@@ -6,7 +6,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ScannerComponent } from './scanner/scanner.component';
 
+import * as platform from "tns-core-modules/platform";
+import { MapComponent } from './map/map.component';
+declare var GMSServices: any;
 
+if (platform.isIOS) { 
+    GMSServices.provideAPIKey("AIzaSyD0AXJg6YZxmReZ4PiZwBbzKILCX8sEBuc");
+}
 
 
 @NgModule({
@@ -21,6 +27,7 @@ import { ScannerComponent } from './scanner/scanner.component';
     declarations: [
         AppComponent,
         ScannerComponent,
+        MapComponent,
     
         
         

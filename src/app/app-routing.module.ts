@@ -3,7 +3,7 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/dialog", pathMatch: "full" },
+    { path: "", redirectTo: "/map", pathMatch: "full" },
     { path: "login", loadChildren: () => import("~/app/login/login.module").then((m) => m.LoginModule) },
     { path: "account", loadChildren: () => import("~/app/account/account.module").then((m) => m.AccountModule) },
     { path: "register", loadChildren: () => import("~/app/register/register.module").then((m) => m.RegisterModule)},
@@ -12,7 +12,8 @@ const routes: Routes = [
     { path: "browse", loadChildren: () => import("~/app/browse/browse.module").then((m) => m.BrowseModule) },
     { path: "search", loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule) },
     { path: "featured", loadChildren: () => import("~/app/featured/featured.module").then((m) => m.FeaturedModule) },
-    { path: "settings", loadChildren: () => import("~/app/settings/settings.module").then((m) => m.SettingsModule) }
+    { path: "settings", loadChildren: () => import("~/app/settings/settings.module").then((m) => m.SettingsModule) },
+    { path: "map", loadChildren: () => import("~/app/map/map.module").then((m) => m.MapModule) },
 ];
 
 @NgModule({
